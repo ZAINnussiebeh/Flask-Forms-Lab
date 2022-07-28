@@ -24,12 +24,11 @@ def login():
         	return render_template('login.html')
 
 
-@app.route('/friend_exists/<string:name>' methods=['GET','POST'])
+@app.route('/friend_exists/<string:name>' ,methods=['GET','POST'])
 def hello_name_route(name):
 	if name in facebook_friends:
-		we need a boolean 
-    return render_template(
-        'friend_exists.html', n = name)
+			return render_template('friend_exists.html', exists=True)
+	return render_template('friend_exists.html',exists =False)
 
 
 
